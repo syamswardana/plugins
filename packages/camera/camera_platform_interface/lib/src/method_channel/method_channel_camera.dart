@@ -70,7 +70,7 @@ class MethodChannelCamera extends CameraPlatform {
         return CameraDescription(
           name: camera['name']! as String,
           lensDirection:
-              parseCameraLensDirection(camera['lensFacing']! as String),
+              parseCameraLensDirection(camera['lensFacing']??"front" as String),
           sensorOrientation: camera['sensorOrientation']! as int,
         );
       }).toList();
